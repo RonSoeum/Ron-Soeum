@@ -2,14 +2,22 @@
 
 $(document).ready(() => {
 
-    $(window).on('scroll', () => {
-        if($(window).scrollTop()){
-            $('nav').addClass('black');
-        }
-        else{
-            $('nav').removeClass('black');
-        }
-    })
+    // const classToggle = () =>
+    //     $('.nav-items').classList.toggle('nav-toggle-show');
+
+    $('.nav-link-toggle').click(() => {
+        $('.nav-items').toggleClass('nav-toggle-show');
+        console.log($('.nav-items'));
+    });
+
+    // $(window).on('scroll', () => {
+    //     if($(window).scrollTop()){
+    //         $('navbar').addClass('black');
+    //     }
+    //     else{
+    //         $('navbar').removeClass('black');
+    //     }
+    // })
 
 
 
