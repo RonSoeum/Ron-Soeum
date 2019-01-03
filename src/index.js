@@ -1,24 +1,22 @@
 "use strict";
 
+const $ = require('jquery');
+
 $(document).ready(() => {
 
-    // const classToggle = () =>
-    //     $('.nav-items').classList.toggle('nav-toggle-show');
+    $(document).scroll(function () {
+        let $navbar = $('.navbar');
+        let $navItems = $('.nav-items a');
+        let $navItemsActive = $('.nav-items a.active');
+        let $sec1 = $('.sec1');
+        $navbar.toggleClass('scrolled', $(this).scrollTop() > $sec1.height());
+        $navItems.toggleClass('scrolld', $(this).scrollTop() > $sec1.height());
+        $navItemsActive.toggleClass('scroll', $(this).scrollTop() > $sec1.height());
+    });
 
     $('.nav-link-toggle').click(() => {
         $('.nav-items').toggleClass('nav-toggle-show');
         console.log($('.nav-items'));
     });
-
-    // $(window).on('scroll', () => {
-    //     if($(window).scrollTop()){
-    //         $('navbar').addClass('black');
-    //     }
-    //     else{
-    //         $('navbar').removeClass('black');
-    //     }
-    // })
-
-
 
 });// Ready
